@@ -11,6 +11,7 @@ function arrayofHiNTimes(n) {
   return console.log(hiArray);
 }
 
+arrayofHiNTimes(6)
 const array = [
   { tweet: "hi", date: 2012 },
   { tweet: "my", date: 2014 },

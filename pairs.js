@@ -9,3 +9,8 @@ function pairs(array) {
   }
 }
 pairs(boxes);
+ 
+// binary search tree
+function search(){
+
+}
