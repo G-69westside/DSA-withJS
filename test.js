@@ -11,9 +11,43 @@ function arrayofHiNTimes(n) {
   return console.log(hiArray);
 }
 
-arrayofHiNTimes(6)
 const array = [
   { tweet: "hi", date: 2012 },
   { tweet: "my", date: 2014 },
   { tweet: "teddy", date: 2022 },
 ];
+
+const array1 = ["a", "b", "c", "d", "x"];
+const array2 = ["z", "e", "x"];
+
+
+function commonItem(arr1, arr2) {
+  // Loop through first array and create object where properties === items in the array
+  //loop through the second array and check if item in second array exists on created object
+  let obj = {};
+  for (let i = 0; i < arr1.length; i++) {
+    if (!obj[arr1[i]]) {
+      const item = arr1[i];
+      obj[item] = true;
+    }
+  }
+  for (let j = 0; j < arr2.length; j++) {
+    if (obj[arr2[j]]) {
+      return console.log(true);
+    }
+  }
+  return console.log(false);
+}
+commonItem(array1, array2);// O(a+b)
+
+// function containscommonitem(arr1, arr2) {
+//   for (let i = 0; i < arr1.length; i++) {
+//     for (let j = 0; j < arr2.length; j++) {
+//       if (arr1[i] === arr2[j]) {
+//         return console.log(true);
+//       }
+//     }
+//   }
+//   return console.log(false);
+// }
+// containscommonitem(array1, array2);
