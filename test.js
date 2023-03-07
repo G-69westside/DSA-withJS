@@ -18,27 +18,26 @@ const array = [
 ];
 
 const array1 = ["a", "b", "c", "d", "x"];
-const array2 = ["z", "e", "x"];
-
+const array2 = ["z", "e", "y"];
 
 function commonItem(arr1, arr2) {
   // Loop through first array and create object where properties === items in the array
   //loop through the second array and check if item in second array exists on created object
-  let obj = {};
+  let map = {};
   for (let i = 0; i < arr1.length; i++) {
-    if (!obj[arr1[i]]) {
+    if (!map[arr1[i]]) {
       const item = arr1[i];
-      obj[item] = true;
+      map[item] = true;
     }
   }
   for (let j = 0; j < arr2.length; j++) {
-    if (obj[arr2[j]]) {
+    if (map[arr2[j]]) {
       return console.log(true);
     }
   }
-  return console.log(false);
+  return console.log(false)
 }
-commonItem(array1, array2);// O(a+b)
+commonItem(array1, array2); // O(a+b)
 
 // function containscommonitem(arr1, arr2) {
 //   for (let i = 0; i < arr1.length; i++) {
