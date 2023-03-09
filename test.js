@@ -35,7 +35,7 @@ function commonItem(arr1, arr2) {
       return console.log(true);
     }
   }
-  return console.log(false)
+  return console.log(false);
 }
 commonItem(array1, array2); // O(a+b)
 
