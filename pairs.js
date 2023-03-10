@@ -15,7 +15,11 @@
 
 // }
 
-let obj = {
-  name: "tony",
-};
-console.log(obj.[0])
+const strings = ["a", "b", "c", "d"];
+
+strings.push("e");
+console.log(strings);
+strings.pop();
+console.log(strings);
+strings.unshift("x");
+console.log(strings);
