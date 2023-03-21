@@ -38,8 +38,19 @@ class HashTable {
       }
     }
   }
+
+  keys() {
+    const keyssArray = [];
+    for (let i = 0; i < this.data.length; i++) {
+      if (this.data[i]) {
+        keyssArray.push(this.data[i][0][0]);
+      }
+    }
+    return console.log(keyssArray);
+  }
 }
-const myHashTable = new HashTable(20);
+const myHashTable = new HashTable(200000);
 myHashTable.set("grapes", 54);
 myHashTable.set("apple", 2000);
 myHashTable.get("grapes");
+myHashTable.keys();
