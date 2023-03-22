@@ -9,4 +9,17 @@ function firstRecurringCharacter(input) {
   return console.log(undefined);
 } // O(n^2) time complexity
 
-firstRecurringCharacter([2, 3, 4]);
+function firstRecurringCharacter2(input) {
+  let object = {};
+  for (let i of input) {
+    console.log(object);
+    if (object[i]) {
+      return console.log(object[i]);
+    } else {
+      object[i] = i;
+    }
+  }
+  console.log(object);
+  return console.log(undefined);
+}  // O(n)
+firstRecurringCharacter([2, 5, 5, 2, 3, 5, 1, 2, 4]);
