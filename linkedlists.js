@@ -1,22 +1,5 @@
-// let myLinkedList = {
-//   head: {
-//     value: 10,
-//     next: {
-//       value: 5,
-//       next: {
-//         value: 16,
-//         next: null,
-//       },
-//     },
-//   },
-// };
+const { colours } = require("nodemon/lib/config/defaults");
 
-class Node {
-  constructor(value) {
-    this.value = value;
-    this.next = null;
-  }
-}
 class LinkedList {
   constructor(value) {
     this.head = {
@@ -34,16 +17,17 @@ class LinkedList {
     this.tail.next = newNode;
     this.tail = newNode;
     this.length++;
+    return this;
   }
-
   prepend(value) {
     const newNode = {
-      value: value,
+      value,
       next: null,
     };
     newNode.next = this.head;
     this.head = newNode;
     this.length++;
+    return this;
   }
   printList() {
     const array = [];
@@ -66,8 +50,6 @@ class LinkedList {
     const holdingPointer = leader.next;
     leader.next = newNode;
     newNode.next = holdingPointer;
-    this.length++;
-    return console.log(this.printList());
   }
   traverseToIndex(index) {
     let counter = 0;
@@ -78,18 +60,11 @@ class LinkedList {
     }
     return currentNode;
   }
-  remove(index) {
-    const leader = this.traverseToIndex(index - 1);
-    const unwantedNode = leader.next;
-    leader.next = unwantedNode.next;
-    this.length--;
-    return console.log(this.printList());
-  }
 }
 const myLinkedList = new LinkedList(10);
+myLinkedList.prepend(4);
 myLinkedList.append(5);
 myLinkedList.append(16);
-myLinkedList.prepend(1);
-myLinkedList.insert(1, 99);
-myLinkedList.remove(2)
+myLinkedList.insert(2, 6);
 myLinkedList.printList();
+console.log(myLinkedList);
