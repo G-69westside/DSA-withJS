@@ -62,11 +62,17 @@ class LinkedList {
     }
     return currentNode;
   }
+  remove(index) {
+    const leader = this.traverseToIndex(index - 1);
+    const unwantedNode = leader.next;
+    leader.next = unwantedNode.next;
+    this.length--;
+  }
 }
 const myLinkedList = new LinkedList(10);
 myLinkedList.prepend(4);
 myLinkedList.append(5);
 myLinkedList.append(16);
-myLinkedList.insert(2, 2);
+myLinkedList.remove(2);
 myLinkedList.printList();
 console.log(myLinkedList);
