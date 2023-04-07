@@ -1,5 +1,3 @@
-const { colours } = require("nodemon/lib/config/defaults");
-
 class LinkedList {
   constructor(value) {
     this.head = {
@@ -18,6 +16,14 @@ class LinkedList {
     this.tail = newNode;
     this.length++;
     return this;
+  }
+  traverseToIndex(index) {
+    let counter = 0;
+    let currentNode = this.head;
+    while (counter !== index) {
+      currentNode = currentNode.next;
+      counter++;
+    }
   }
   prepend(value) {
     const newNode = {
@@ -39,40 +45,49 @@ class LinkedList {
     return console.log(array);
   }
   insert(value, index) {
-    if (index > this.length) {
+    if (index >= this.length) {
       return this.append(value);
     }
-    const newNode = {
-      value: value,
-      next: null,
-    };
+
+    const newNode = { value: value, next: null };
     const leader = this.traverseToIndex(index - 1);
     const holdingPointer = leader.next;
     leader.next = newNode;
     newNode.next = holdingPointer;
-    this.length++;
+    this.lenght++;
   }
 
-  traverseToIndex(index) {
-    let counter = 0;
-    let currentNode = this.head;
-    while (counter !== index) {
-      currentNode = currentNode.next;
-      counter++;
-    }
-    return currentNode;
-  }
   remove(index) {
     const leader = this.traverseToIndex(index - 1);
     const unwantedNode = leader.next;
     leader.next = unwantedNode.next;
     this.length--;
+    return this
+  }
+
+  reverse() {
+    if (this.head.next === null) {
+      return this;
+    }
+    let first = this.head;
+    this.tail = this.head;
+    let second = first.next;
+    while (second) {
+      const temp = second.next;
+      second.next = first;
+      first = second;
+      second = temp;
+    }
+    this.head.next = null;
+    this.head = first;
   }
 }
 const myLinkedList = new LinkedList(10);
 myLinkedList.prepend(4);
 myLinkedList.append(5);
 myLinkedList.append(16);
-myLinkedList.remove(2);
+//myLinkedList.remove(2);
+myLinkedList.reverse()
 myLinkedList.printList();
+
 console.log(myLinkedList);
