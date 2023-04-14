@@ -10,8 +10,6 @@ function fibonacciRecursive(n) {
   if (n < 2) {
     return n;
   }
-  const answer = fibonacciRecursive(n - 1) + fibonacciRecursive(n - 2);
-  console.log(answer);
-  return answer;
-} 
-fibonacciRecursive(6);
+  return fibonacciRecursive(n - 1) + fibonacciRecursive(n - 2);
+}
+console.log(fibonacciRecursive(8));
