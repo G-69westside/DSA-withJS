@@ -23,3 +23,6 @@ function firstRecurringCharacter2(input) {
   return console.log(undefined);
 }  // O(n)
 firstRecurringCharacter([2, 5, 5, 2, 3, 5, 1, 2, 4]);
+
+
+function firstRecurringCharacter3()
