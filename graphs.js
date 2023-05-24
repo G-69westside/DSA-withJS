@@ -12,12 +12,12 @@ class Graph {
     this.adjacentList = {};
   }
   addVertex(node) {
-    this.adjacentList[node]= []
-    this.numberOfNodes++
+    this.adjacentList[node] = [];
+    this.numberOfNodes++;
   }
   addEdge(node1, node2) {
-    this.adjacentList[node1].push(node2)
-    this.adjacentList[node2].push(node1)
+    this.adjacentList[node1].push(node2);
+    this.adjacentList[node2].push(node1);
   }
   showConnections() {
     const allNodes = Object.keys(this.adjacentList);
@@ -42,4 +42,4 @@ myGraph.addVertex("5");
 myGraph.addVertex("6");
 myGraph.addEdge("3", "1");
 myGraph.addEdge("3", "4");
-myGraph.showConnections()
+myGraph.showConnections();
